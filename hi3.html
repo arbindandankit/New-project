@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-6.7.2-web\fontawesome-free-6.7.2-web\css\all.min.css" />
+	<style>
+		:root{
+			--green: rgb(0, 148, 128);
+		}
+
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		body{
+			background-color: rgb(0, 199, 172);
+		}
+
+		.box{
+			height: 440px;
+			width: 400px;
+			transition: all 300ms;
+			border-radius: 15px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			overflow: hidden;
+		}
+
+		.box:hover{
+			box-shadow: 5px 5px 5px black;
+		}
+
+		.head{
+			height: 128px;
+			width: 480px;
+			background-color: var(--green);
+			margin: -20px 0 0 -20px;
+		}
+
+		.head>h1{
+			text-align: center;
+			padding: 50px 0 0 0;
+			font-size: 2.5em;
+			font-family: Arial, Helvetica, sans-serif;
+			color: white;
+			margin-left: -40px;
+		}
+
+		.main{
+			background-color: white;
+			height: 408px;
+			width: 480px;
+			margin: 0 0 0 -20px;
+			padding: 20px;
+		}
+
+		.i-holder{
+			height: 50px;
+			width: 360px;
+			outline: 1px solid black;
+			border-radius: 2px;
+			overflow: hidden;
+			margin-left: 20px;
+		}
+
+		.i-holder>i{
+			height: 28px;
+			width: 28px;
+			background-color: rgb(0, 148, 128);
+			position: relative;
+			padding: 10px 10px 14px 10px;
+			border-top-left-radius: 2px;
+			border-bottom-left-radius: 2px;
+		}
+
+		.i-holder>input{
+			height: 30px;
+			width: 330px;
+			position: relative;
+			top: -26.5px;
+			left: 26px;
+			font-size: 1.4em;
+			border: 0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			padding: 10px;
+		}
+
+		.i-holder>input:active{
+			border: 0;
+			outline: 0;
+		}
+
+		#inp1{
+			top: -53px;
+			left: 48px;
+		}
+		
+		#inp2{
+			top: -53px;
+			left: 48px;
+		}
+
+		.first{
+			top: -0.5px;
+		}
+
+		.second{
+			top: 0;
+		}
+
+		.h2{
+			margin-top: 10px;
+		}
+
+		#FP{
+			font-size: 1.6em;
+			margin-top: 15px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: rgb(0, 148, 128);
+			margin-left: 20px;
+		}
+
+		#FP::after{
+			content: '';
+			display: block;
+			height: 2px;
+			width: 0;
+			background: var(--green);
+			transition: all 200ms;
+		}
+
+		#FP:hover{
+			cursor: pointer;
+		}
+
+		#FP:active{
+			cursor: grab;
+		}
+
+		#FP:hover::after{
+			width: 210px;
+		}
+
+		#btn{
+			height: 50px;
+			width: 360px;
+			background: var(--green);
+			border: 1px solid black;
+			border-radius: 5px;
+			color: white;
+			margin-top: 15px;
+			margin-left: 20px;
+			font-size: 1.6em;
+		}
+
+		#btn:hover{
+			cursor: pointer;
+		}
+
+		#btn:active{
+			cursor: grab;
+		}
+
+		#member-btn{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.6em;
+			margin-left: 32px;
+			margin-top: 20px;
+		}
+
+		span{
+			color: var(--green);
+		}
+
+		span:hover{
+			cursor: pointer;
+		}
+
+		span:active{
+			cursor: grab;
+		}
+
+		span::after{
+			content: '';
+			display: block;
+			height: 3px;
+			width: 0;
+			background: var(--green);
+			transition: all 200ms;
+			position: relative;
+			left: 182px;
+		}
+
+		span:hover::after{
+			width: 140px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<h1 id="h1">Login form</h1>
+		</div>
+		<div class="main">
+			<div class="i-holder h1">
+				<i class="fa-solid fa-user fa-2x first"></i>
+				<input type="text" id="inp1" placeholder="Email or Phone" />
+			</div>
+			<br />
+			<div class="i-holder h2">
+				<i class="fa-solid fa-lock fa-2x second"></i>
+				<input type="text" id="inp2" placeholder="Password" />
+			</div>
+			<p id="FP" onclick="funcfun()">Forgot Password?</p>
+			<input type="button" value="Login" id="btn" />
+			<p id="member-btn">Not a member? <span onclick="signup()">Signup now</span></p>
+		</div>
+	</div>
+	<script>
+		function funcfun() {
+			alert("Well, too bad :(")
+		}
+
+		function signup() {
+			document.querySelector("#h1").innerHTML = "Signup form"
+			document.querySelector("#member-btn").innerHTML = "Already a user?<span onclick='funcfunc()'> Login now</span>"
+			document.querySelector("#FP").innerHTML = ""
+			document.querySelector(".box").style.height = "410px"
+			document.querySelector("#btn").value = "Signup"
+		}
+
+		function funcfunc() {
+			document.querySelector("#h1").innerHTML = "Login form"
+			document.querySelector("#member-btn").innerHTML = "Already a user?<span onclick='signup()'> signup now</span>"
+			document.querySelector("#FP").innerHTML = "Forgot Password?"
+			document.querySelector(".box").style.height = "440px"
+			document.querySelector("#btn").value = "Login"
+		}
+	</script>
+</body>
+</html>
