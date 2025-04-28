@@ -12,7 +12,7 @@
         }
 
         body{
-            overflow: hidden;
+            /* overflow: hidden; */
         }
 
         .box{
@@ -136,25 +136,110 @@
             top: -712px;
         }
 
-        .popup>i:hover{
-            cursor: pointer;
+        @media screen and (max-width: 426px) {
+            .main{
+                height: 80px;
+                width: 80px;
+                font-size: 0.5em;
+            }
+
+            .main>p{
+                top: 50px
+            }
+
+            .emp{
+                height: 50px;
+                width: 50px;
+                font-size: 0.5em;
+            }
+
+            .emp>i{
+                top: -2px;
+                left: 25px;
+            }
+
+            .emp>p{
+                top: 25px;
+                font-size: 0.3em;
+            }
+
+            .empire1{
+                top: 160px;
+                left: 188px;
+            }
+
+            .empire2{
+                top: 420px;
+                left: 188px;
+            }
+
+            .empire3{
+                top: 295px;
+                left: 50px;
+            }
+
+            .empire3>i{
+                top: 0;
+                left: 25px;
+            }
+
+            .empire3>p{
+                top: 25px;
+                left: 5px;
+                width: 40px;
+            }
+
+            .empire4{
+                top: 295px;
+                left: 320px;
+            }
+
+            .empire5{
+                top: 185px;
+                left: 75px;
+            }
+
+            .empire5>i{
+                top: 0;
+                left: 25px;
+            }
+
+            .empire5>p{
+                top: 25px;
+                left: 5px;
+                width: 40px;
+            }
+
+            .empire6{
+                top: 185px;
+                left: 300px;
+            }
+
+            .empire7{
+                top: 395px;
+                left: 75px;
+            }
+
+            .empire8{
+                top: 395px;
+                left: 300px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="box">
         <div class="main"><p>The Empires</p><i class="fa-solid fa-earth-americas"></i></div>
-        <div class="emp empire1" onclick="func1()"><p>The Roman Empire</p><i class="fa-solid fa-landmark"></i></div>
-        <div class="emp empire2" onclick="func2()"><p>The Mongol Empire</p><i class="fa-solid fa-horse"></i></div>
-        <div class="emp empire3" onclick="func3()"><p>The British Empire</p><i class="fa-solid fa-ship"></i></div>
-        <div class="emp empire4" onclick="func4()"><p>The Ottoman Empire</p><i class="fa-solid fa-mosque"></i></div>
-        <div class="emp empire5" onclick="func5()"><p>The Qing Dynasty</p><i class="fa-solid fa-dragon"></i></div>
-        <div class="emp empire6" onclick="func6()"><p>The persian Empire</p><i class="fa-solid fa-masks-theater"></i></div>
-        <div class="emp empire7" onclick="func7()"><p>The Japanese Empire</p><i class="fa-solid fa-torii-gate"></i></div>
-        <div class="emp empire8" onclick="func8()"><p>The Mughal Empire</p><i class="fa-solid fa-palette"></i></div>
+        <div class="emp empire1" onmouseenter="func1()" onmouseleave="cross()"><p>The Roman Empire</p><i class="fa-solid fa-landmark"></i></div>
+        <div class="emp empire2" onmouseenter="func2()" onmouseleave="cross()"><p>The Mongol Empire</p><i class="fa-solid fa-horse"></i></div>
+        <div class="emp empire3" onmouseenter="func3()" onmouseleave="cross()"><p>The British Empire</p><i class="fa-solid fa-ship"></i></div>
+        <div class="emp empire4" onmouseenter="func4()" onmouseleave="cross()"><p>The Ottoman Empire</p><i class="fa-solid fa-mosque"></i></div>
+        <div class="emp empire5" onmouseenter="func5()" onmouseleave="cross()"><p>The Qing Dynasty</p><i class="fa-solid fa-dragon"></i></div>
+        <div class="emp empire6" onmouseenter="func6()" onmouseleave="cross()"><p>The persian Empire</p><i class="fa-solid fa-masks-theater"></i></div>
+        <div class="emp empire7" onmouseenter="func7()" onmouseleave="cross()"><p>The Japanese Empire</p><i class="fa-solid fa-torii-gate"></i></div>
+        <div class="emp empire8" onmouseenter="func8()" onmouseleave="cross()"><p>The Mughal Empire</p><i class="fa-solid fa-palette"></i></div>
     </div>
     <div class="popup">
-        <i class="fa-solid fa-xmark" style="font-size: 2em;position: relative;left: 320px;" onclick="cross()"></i>
         <h1 style="text-align: center;font-family: Arial;margin-bottom: 30px;">Head</h1>
         <p id="greatCode" style="text-align: center;font-family: Arial;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio corporis accusamus, quia modi pariatur laudantium reprehenderit eveniet quaerat. Fugit distinctio iure earum repudiandae ipsum consequuntur deserunt minima eveniet ullam et!</p>
     </div>
@@ -164,59 +249,99 @@
         }
 
         function func1() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#F3FFBD"
-            document.querySelector("h1").innerHTML = "The Roman Empire"
-            document.querySelector("#greatCode").innerHTML = "The Roman Empire was a magnificent empire in europe that ruled the mediterranean for many hundreds of years. The first king of the Roman Kingdom was Julias Ceaser. He ruled for a number of years and laid the the foundations of the great empire. Later, he was assasinated by some of his ministers. Soon other emperors like Augustus, Trajan, Hadrian, Claudius, and Vespasian led the empire to greatness. Constantine 'the Great' was especially famous for converting into christianity. The Romans were known for their military greatness. But, as all good things must come to an end, the west half of the empire with Rome fell in 476 CE. But, the eastern half still stayed strong and went on for more than 500 years. It made Constantinople it's capital. Later, in 1026 CE, it was taken down with it's capital, in the long Seige of Constantinople with the last emperor, Constantine the XII. The empire that took it down is also on this page."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#F3FFBD"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The Roman Empire"
+                document.querySelector("#greatCode").innerHTML = "The Roman Empire was a magnificent empire in europe that ruled the mediterranean for many hundreds of years. The first king of the Roman Kingdom was Julias Ceaser. He ruled for a number of years and laid the the foundations of the great empire. Later, he was assasinated by some of his ministers. Soon other emperors like Augustus, Trajan, Hadrian, Claudius, and Vespasian led the empire to greatness. Constantine 'the Great' was especially famous for converting into christianity. The Romans were known for their military greatness. But, as all good things must come to an end, the west half of the empire with Rome fell in 476 CE. But, the eastern half still stayed strong and went on for more than 500 years. It made Constantinople it's capital. Later, in 1026 CE, it was taken down with it's capital, in the long Seige of Constantinople with the last emperor, Constantine the XII. The empire that took it down is also on this page."
+            }
         }
 
         function func2() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#9FA4C4"
-            document.querySelector("h1").innerHTML = "The Mongol Empire"
-            document.querySelector("#greatCode").innerHTML = "The Mongol Empire (1206–1368) was the largest contiguous land empire in history, founded by Genghis Khan. Emerging from the vast Eurasian steppes, Mongol warriors built a highly disciplined and fearsome military force, using superior cavalry tactics and siege warfare to conquer powerful civilizations. Their conquests stretched from China to the Middle East, Russia, and Eastern Europe, reshaping global history. The empire facilitated trade and cultural exchange along the Silk Road, fostering economic prosperity and scientific advancement. Despite their brutal warfare, the Mongols promoted religious tolerance and effective governance, creating an administrative system that integrated diverse populations. Under Kublai Khan, the Mongols ruled China as the Yuan Dynasty, influencing Chinese society and politics. However, internal strife, revolts, and external pressures led to its gradual fragmentation. The empire left an enduring legacy, shaping the modern world by fostering connections between East and West, advancing military strategy, governance, and commerce."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#9FA4C4"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The Mongol Empire"
+                document.querySelector("#greatCode").innerHTML = "The Mongol Empire (1206–1368) was the largest contiguous land empire in history, founded by Genghis Khan. Emerging from the vast Eurasian steppes, Mongol warriors built a highly disciplined and fearsome military force, using superior cavalry tactics and siege warfare to conquer powerful civilizations. Their conquests stretched from China to the Middle East, Russia, and Eastern Europe, reshaping global history. The empire facilitated trade and cultural exchange along the Silk Road, fostering economic prosperity and scientific advancement. Despite their brutal warfare, the Mongols promoted religious tolerance and effective governance, creating an administrative system that integrated diverse populations. Under Kublai Khan, the Mongols ruled China as the Yuan Dynasty, influencing Chinese society and politics. However, internal strife, revolts, and external pressures led to its gradual fragmentation. The empire left an enduring legacy, shaping the modern world by fostering connections between East and West, advancing military strategy, governance, and commerce."
+            }
         }
 
         function func3() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#C7F0BD"
-            document.querySelector("h1").innerHTML = "The British Empire"
-            document.querySelector("#greatCode").innerHTML = "The British Empire was one of the most expansive and influential empires in history, shaping global politics, economics, and culture for centuries. Beginning in the late 16th century, Britain established colonies across North America, the Caribbean, Africa, Asia, and Australia, driven by trade, exploration, and strategic dominance. By the 19th century, it reached its peak, ruling over vast territories connected by maritime power and commerce. The Industrial Revolution further strengthened British influence, fostering economic growth and technological advancements. However, its expansion was marked by conflicts, resistance, and colonial exploitation. Indigenous populations often faced displacement, oppression, and resource extraction, which fueled economic prosperity in Britain but led to struggles for independence across its territories. The empire played a crucial role in global events, including both World Wars, shaping modern geopolitics. By the mid-20th century, nationalist movements and decolonization efforts led to its decline, giving rise to independent nations. Today, the Commonwealth of Nations serves as a reminder of its legacy, maintaining diplomatic and cultural ties among former colonies while reflecting on the complex history of British imperial rule."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#C7F0BD"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The British Empire"
+                document.querySelector("#greatCode").innerHTML = "The British Empire was one of the most expansive and influential empires in history, shaping global politics, economics, and culture for centuries. Beginning in the late 16th century, Britain established colonies across North America, the Caribbean, Africa, Asia, and Australia, driven by trade, exploration, and strategic dominance. By the 19th century, it reached its peak, ruling over vast territories connected by maritime power and commerce. The Industrial Revolution further strengthened British influence, fostering economic growth and technological advancements. However, its expansion was marked by conflicts, resistance, and colonial exploitation. Indigenous populations often faced displacement, oppression, and resource extraction, which fueled economic prosperity in Britain but led to struggles for independence across its territories. The empire played a crucial role in global events, including both World Wars, shaping modern geopolitics. By the mid-20th century, nationalist movements and decolonization efforts led to its decline, giving rise to independent nations. Today, the Commonwealth of Nations serves as a reminder of its legacy, maintaining diplomatic and cultural ties among former colonies while reflecting on the complex history of British imperial rule."
+            }
         }
 
         function func4() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#3BCEAC"
-            document.querySelector("h1").innerHTML = "The Ottoman Empire"
-            document.querySelector("#greatCode").innerHTML = "The Ottoman Empire (1299–1922) was one of the most powerful and enduring empires in history, spanning Europe, the Middle East, and North Africa. Founded by Osman I, it expanded rapidly, dominating key trade routes and shaping global commerce. At its height under Suleiman the Magnificent, the empire boasted a sophisticated administration, religious tolerance, and remarkable architectural achievements, including the grand mosques of Istanbul. The Ottoman military, notably the elite Janissaries, played a crucial role in expansion and defense. Over time, internal strife, European competition, and military decline led to its fragmentation. After World War I, the empire dissolved, paving the way for modern Turkey under Mustafa Kemal Atatürk. Its legacy continues through governance, law, and cultural influence."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#3BCEAC"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The Ottoman Empire"
+                document.querySelector("#greatCode").innerHTML = "The Ottoman Empire (1299–1922) was one of the most powerful and enduring empires in history, spanning Europe, the Middle East, and North Africa. Founded by Osman I, it expanded rapidly, dominating key trade routes and shaping global commerce. At its height under Suleiman the Magnificent, the empire boasted a sophisticated administration, religious tolerance, and remarkable architectural achievements, including the grand mosques of Istanbul. The Ottoman military, notably the elite Janissaries, played a crucial role in expansion and defense. Over time, internal strife, European competition, and military decline led to its fragmentation. After World War I, the empire dissolved, paving the way for modern Turkey under Mustafa Kemal Atatürk. Its legacy continues through governance, law, and cultural influence."
+            }
         }
 
         function func5() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#8367C7"
-            document.querySelector("h1").innerHTML = "The Qing Dynasty"
-            document.querySelector("#greatCode").innerHTML = "The Qing Dynasty (1644–1912) was China’s last imperial dynasty, ruling for nearly three centuries. Founded by the Manchus, it expanded China's borders to their greatest historical extent, incorporating Tibet, Taiwan, and parts of Central Asia. The Qing maintained a strong centralized administration, blending Confucian traditions with Manchu governance. Under emperors like Kangxi and Qianlong, China experienced economic growth, cultural flourishing, and global trade. However, internal strife, foreign interventions, and rebellions weakened its grip. The Opium Wars and unequal treaties further eroded Qing authority, leading to its eventual collapse in 1912 and the establishment of the Republic of China. Its legacy remains influential in Chinese history and culture."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#8367C7"
+                document.querySelector(".popup").style.color = "white"
+                document.querySelector("h1").innerHTML = "The Qing Dynasty"
+                document.querySelector("#greatCode").innerHTML = "The Qing Dynasty (1644–1912) was China’s last imperial dynasty, ruling for nearly three centuries. Founded by the Manchus, it expanded China's borders to their greatest historical extent, incorporating Tibet, Taiwan, and parts of Central Asia. The Qing maintained a strong centralized administration, blending Confucian traditions with Manchu governance. Under emperors like Kangxi and Qianlong, China experienced economic growth, cultural flourishing, and global trade. However, internal strife, foreign interventions, and rebellions weakened its grip. The Opium Wars and unequal treaties further eroded Qing authority, leading to its eventual collapse in 1912 and the establishment of the Republic of China. Its legacy remains influential in Chinese history and culture."
+            }
         }
 
         function func6() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#9DC4B5"
-            document.querySelector("h1").innerHTML = "The Persian Empire"
-            document.querySelector("#greatCode").innerHTML = "The Persian Empire, spanning multiple dynasties, was one of the most influential civilizations in history. The Achaemenid Empire (550–330 BCE), founded by Cyrus the Great, united vast territories from the Indus Valley to the Mediterranean. Known for its advanced administration, road networks, and religious tolerance, it thrived under rulers like Darius I and Xerxes. Later, the Sassanian Empire (224–651 CE) rivaled Rome and Byzantium, fostering art, science, and trade. Persian contributions to governance, architecture, and philosophy shaped the Islamic Golden Age and modern societies. Though conquered by Alexander the Great and later Arab forces, Persia’s legacy remains deeply embedded in global culture and history."
-        }
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#9DC4B5"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The Persian Empire"
+                document.querySelector("#greatCode").innerHTML = "The Persian Empire, spanning multiple dynasties, was one of the most influential civilizations in history. The Achaemenid Empire (550–330 BCE), founded by Cyrus the Great, united vast territories from the Indus Valley to the Mediterranean. Known for its advanced administration, road networks, and religious tolerance, it thrived under rulers like Darius I and Xerxes. Later, the Sassanian Empire (224–651 CE) rivaled Rome and Byzantium, fostering art, science, and trade. Persian contributions to governance, architecture, and philosophy shaped the Islamic Golden Age and modern societies. Though conquered by Alexander the Great and later Arab forces, Persia’s legacy remains deeply embedded in global culture and history."
+            }
+        }   
 
         function func7() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#FEEFE5"
-            document.querySelector("h1").innerHTML = "The Japanese Empire"
-            document.querySelector("#greatCode").innerHTML = "Japan has a rich and dynamic history, shaped by centuries of political, cultural, and technological transformation. The earliest Japanese societies, influenced by Chinese and Korean traditions, formed centralized states such as the Yamato in the 4th century. The emergence of the samurai class during the Heian and Kamakura periods (794–1333) led to the development of a feudal system dominated by powerful warlords and shoguns. The Tokugawa shogunate (1603–1868) ushered in a long era of isolation, fostering a distinct cultural identity while maintaining strict control over foreign influences. In 1868, the Meiji Restoration transformed Japan into a modern, industrialized nation, adopting Western technologies and governance while preserving traditional values. By the early 20th century, Japan had become a global power, expanding its influence throughout Asia. However, its aggressive expansion led to conflicts, culminating in World War II. After its defeat in 1945, Japan underwent a remarkable reconstruction, transitioning into a democratic nation and emerging as a leader in technology, economics, and culture."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#FEEFE5"
+                document.querySelector(".popup").style.color = "black"
+                document.querySelector("h1").innerHTML = "The Japanese Empire"
+                document.querySelector("#greatCode").innerHTML = "Japan has a rich and dynamic history, shaped by centuries of political, cultural, and technological transformation. The earliest Japanese societies, influenced by Chinese and Korean traditions, formed centralized states such as the Yamato in the 4th century. The emergence of the samurai class during the Heian and Kamakura periods (794–1333) led to the development of a feudal system dominated by powerful warlords and shoguns. The Tokugawa shogunate (1603–1868) ushered in a long era of isolation, fostering a distinct cultural identity while maintaining strict control over foreign influences. In 1868, the Meiji Restoration transformed Japan into a modern, industrialized nation, adopting Western technologies and governance while preserving traditional values. By the early 20th century, Japan had become a global power, expanding its influence throughout Asia. However, its aggressive expansion led to conflicts, culminating in World War II. After its defeat in 1945, Japan underwent a remarkable reconstruction, transitioning into a democratic nation and emerging as a leader in technology, economics, and culture."
+            }
         }
 
         function func8() {
-            document.querySelector(".popup").style.top = "0px"
-            document.querySelector(".popup").style.background = "#73628A"
-            document.querySelector("h1").innerHTML = "The Mughal Empire"
-            document.querySelector("#greatCode").innerHTML = "The Mughal Empire (1526–1857) was one of the most influential dynasties in South Asian history, known for its military prowess, administrative efficiency, and architectural marvels. Founded by Babur after his victory at Panipat, the empire flourished under rulers like Akbar, Jahangir, Shah Jahan, and Aurangzeb. The Mughals established a centralized administration, blending Persian, Indian, and Islamic traditions. Akbar promoted religious tolerance and cultural synthesis, while Shah Jahan commissioned the iconic Taj Mahal. The empire thrived on trade, art, and economic prosperity, but internal conflicts and European influence led to its decline. By the 19th century, British colonial rule replaced Mughal authority, but their legacy remains deeply embedded in South Asian culture, politics, and architecture."
+            if (document.querySelector(".popup").style.top != "-712px") {   
+                document.querySelector(".popup").style.top = "-712px"
+            }else{
+                document.querySelector(".popup").style.top = "0px"
+                document.querySelector(".popup").style.background = "#73628A"
+                document.querySelector(".popup").style.color = "white"
+                document.querySelector("h1").innerHTML = "The Mughal Empire"
+                document.querySelector("#greatCode").innerHTML = "The Mughal Empire (1526–1857) was one of the most influential dynasties in South Asian history, known for its military prowess, administrative efficiency, and architectural marvels. Founded by Babur after his victory at Panipat, the empire flourished under rulers like Akbar, Jahangir, Shah Jahan, and Aurangzeb. The Mughals established a centralized administration, blending Persian, Indian, and Islamic traditions. Akbar promoted religious tolerance and cultural synthesis, while Shah Jahan commissioned the iconic Taj Mahal. The empire thrived on trade, art, and economic prosperity, but internal conflicts and European influence led to its decline. By the 19th century, British colonial rule replaced Mughal authority, but their legacy remains deeply embedded in South Asian culture, politics, and architecture."
+            }
         }
     </script>
 </body>
